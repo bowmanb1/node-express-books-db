@@ -6,29 +6,30 @@ function HandleError(response, reason, message, code){
     console.log('ERROR: ' + reason);
     response.status(code || 500).json({"error": message});
 }
-//
-// router.post('/', (request, response, next) =>{
-//     let bookJSON = request.body;
-//     if (!bookJSON.title || !bookJSON.author)
-//         HandleError(response, 'Missing Information', 'Form Data Missing', 500);
-//     else{
-//         let book = new BookSchema({
-//             title: bookJSON.title, // firstName: request.body.firstName
-//             description: bookJSON.description,
-//             year: bookJSON.year,
-//             author : bookJSON.author,
-//             hardCover: bookJSON.hardCover,
-//             price : bookJSON.price
-//         });
-//         book.save( (error) => {
-//             if (error){
-//                 response.send({"error": error});
-//             }else{
-//                 response.send({"id": book.id});
-//             }
-//         });
-//     }
-// });
+
+router.post('/', (request, response, next) =>{
+    // let bookJSON = request.body;
+    // if (!bookJSON.title || !bookJSON.author)
+    //     HandleError(response, 'Missing Information', 'Form Data Missing', 500);
+    // else{
+    //     let book = new BookSchema({
+    //         title: bookJSON.title, // firstName: request.body.firstName
+    //         description: bookJSON.description,
+    //         year: bookJSON.year,
+    //         author : bookJSON.author,
+    //         hardCover: bookJSON.hardCover,
+    //         price : bookJSON.price
+    //     });
+    //     book.save( (error) => {
+    //         if (error){
+    //             response.send({"error": error});
+    //         }else{
+    //             response.send({"id": book.id});
+    //         }
+    //     });
+    // }
+    console.log("Access granted")
+});
 // Check Post with: db.books.find()
 
 router.get('/', (request, response, next)=>{
