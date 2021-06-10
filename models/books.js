@@ -7,7 +7,7 @@ let BookSchema = new Schema( {
     description: String,
     year: Number,
     author: String,
-    hardCover: String,
+    hardCover: Boolean,
     price: Number
 });
 
