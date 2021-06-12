@@ -13,12 +13,12 @@ router.post('/', (request, response, next) =>{
         HandleError(response, 'Missing Information', 'Form Data Missing', 500);
     else{
         let book = new BookSchema({
-            title: bookJSON.title, 
-            description: bookJSON.description,
-            year: bookJSON.year,
+            title: bookJSON.title,
+            description: bookJSON.description || "Read to find out!",
+            year: bookJSON.year || new Date().getFullYear(),
             author : bookJSON.author,
-            hardCover: bookJSON.hardCover,
-            price : bookJSON.price
+            hardCover: bookJSON.hardCover || false,
+            price : bookJSON.price || 0
         });
         book.save( (error) => {
             if (error){
