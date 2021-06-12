@@ -13,7 +13,7 @@ router.post('/', (request, response, next) =>{
         HandleError(response, 'Missing Information', 'Form Data Missing', 500);
     else{
         let book = new BookSchema({
-            title: bookJSON.title, // firstName: request.body.firstName
+            title: bookJSON.title, 
             description: bookJSON.description,
             year: bookJSON.year,
             author : bookJSON.author,
