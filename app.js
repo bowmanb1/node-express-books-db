@@ -5,12 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // for db
-var db = require('./database');
+var db = require('./db');
 
 
 
-var indexRouter = require('./routes/index');
-var bookRouter = require('./routes/books');
+var indexRouter = require('./routers/index');
+var bookRouter = require('./routers/books');
 
 var app = express();
 
